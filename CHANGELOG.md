@@ -26,6 +26,14 @@ Why accepted rather than backfilled:
 
 The audit also found **zero** GitHub releases without a matching tag, so the record is incomplete in only this one direction.
 
+## [2.5.2] - 2026-08-21
+
+A housekeeping release. No change to the `/security-review` command, the `security-reviewer` agent, or the analysis methodology.
+
+### Security
+
+- **`.stride_auth.md` is now in `.gitignore`.** The file holds a live Stride API token and is written into any repository where the Stride agent workflow runs, this one included. Nothing had committed it, but the only thing standing between the token and a push was that nobody had run `git add -A` at the wrong moment — a poor control for a plugin whose subject is exactly this class of mistake.
+
 ## [2.5.1] - 2026-07-23
 
 ### Fixed — the agent-dispatch-failure exit-code contract now matches the procedure (G377: D170)
@@ -252,6 +260,7 @@ Initial release.
 <!-- Release ritual: every released version adds its link here, newest first, as
      part of cutting the release — the footer must always reach the newest entry
      heading above. -->
+[2.5.2]: https://github.com/cheezy/stride-security-review/releases/tag/v2.5.2
 [2.5.1]: https://github.com/cheezy/stride-security-review/releases/tag/v2.5.1
 [2.5.0]: https://github.com/cheezy/stride-security-review/releases/tag/v2.5.0
 [2.4.2]: https://github.com/cheezy/stride-security-review/releases/tag/v2.4.2
